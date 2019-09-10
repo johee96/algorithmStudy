@@ -20,7 +20,7 @@ public class level18_5 {
 
 		for (int i = 0; i < n; i++) {
 			String a = sc.next();
-			
+		
 			for (int j = 0; j < a.length(); j++) {
 				map[i][j] = Integer.parseInt((String) a.subSequence(j, j+1));
 			}
