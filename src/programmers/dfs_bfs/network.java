@@ -1,4 +1,4 @@
-package dfs_bfs;
+package programmers.dfs_bfs;
 
 public class network {
 
