@@ -5,7 +5,7 @@ import java.util.Map;
 
 /*LRU Cache algorithm 구현
  *LRU(Least Recently Used) : 가장 오랫동안 사용되지 않은 페이지를 교체하는 알고리즘
- * double linked list 사용
+ * doubly linked list 사용
  * map 사용 : 노드를 탐색하는 속도가 O(1)이기 때문이다.
  * Head와 Tail 노드는 data를 가지고 있는 것이 아니고 포인터의 역할만 한다.
  * 즉, head.next 값이 실제 리스트에 최근에 추가된 원소가 되고, Tail.prev 값이 실제 리스트의 가장 오래된 원소가 된다.
