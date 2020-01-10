@@ -22,23 +22,23 @@ public class 벽돌깨기_SWTest {
                 for (int j = 0; j < w; j++)
                     map[i][j] = sc.nextInt();
 
-            solve();
+            bombSeq();
             System.out.println("#"+t+" "+count);
         }
 
     }
 
-    private static void solve() {
-        //폭탄을 떨어트릴 순서 넘기
+    private static void bombSeq() {
+        //폭탄을 떨어트릴 순서 넣기
         for (int i = 0; i < w; i++)
             for (int j = 0; j < w; j++)
                 for (int k = 0; k < w; k++)
                     for (int v = 0; v < w; v++)
-                        bombSeq(i, j, k, v);
+                        toBomb(i, j, k, v);
 
     }
 
-    private static void bombSeq(int a, int b, int c, int d) {
+    private static void toBomb(int a, int b, int c, int d) {
         //폭탄 떨어트릴 순서배열
         int seq[] = new int[4];
         seq[0] = a;
