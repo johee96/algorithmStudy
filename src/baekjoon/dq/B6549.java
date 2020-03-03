@@ -2,6 +2,7 @@ package baekjoon.dq;
 
 import java.util.Scanner;
 
+//@Todo 세그먼트 공부하고 다시 풀기
 public class B6549 {
     static long maxRect;
     static int n;
