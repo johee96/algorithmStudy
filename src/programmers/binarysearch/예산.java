@@ -13,6 +13,7 @@ public class 예산 {
 
 class 예산_Solution {
     static int re = -1;
+
     public int solution(int[] budgets, int M) {
         Arrays.sort(budgets);
 
@@ -33,7 +34,7 @@ class 예산_Solution {
         int mid = (start + end) / 2;
         long sum = sumData(data, mid);
         if (sum > m) {
-            search(data, start, mid-1, m);
+            search(data, start, mid - 1, m);
         } else {
             re = Math.max(re, mid);
             search(data, mid + 1, end, m);
@@ -53,10 +54,3 @@ class 예산_Solution {
         return result;
     }
 }
-
-
-/*
-
-
-
- */
