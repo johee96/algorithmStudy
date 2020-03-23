@@ -10,14 +10,11 @@ public class 소수찾기 {
 }
 
 class 소수찾기_Solution {
-
     public int solution(String numbers) {
         char[] numStr = numbers.toCharArray();
-        int answer = 0;
         ArrayList<Integer> primeNum = new ArrayList<>();
         boolean visited[] = new boolean[numStr.length];
         findPrimeNum(0, "", numStr, primeNum, visited);
-
         return primeNum.size();
     }
 
@@ -39,10 +36,7 @@ class 소수찾기_Solution {
                 visited[i] = false;
             }
         }
-
-
     }
-
 
     public boolean checkPrimeNum(String str) {
         boolean result = true;
@@ -55,7 +49,6 @@ class 소수찾기_Solution {
                 break;
             }
         }
-
         return result;
     }
 }
