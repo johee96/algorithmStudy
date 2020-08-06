@@ -9,6 +9,39 @@ import java.util.StringTokenizer;
 
 public class B10828 {
     public static void main(String[] args) throws IOException {
+        usingStack();
+    }
+
+    private static void usingStack() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        Stack<Integer> numStack = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            String data = br.readLine();
+            String[] splitData = data.split("\\s");
+            if (splitData.length == 2) {
+                numStack.push(Integer.valueOf(splitData[1]));
+                continue;
+            }
+            switch (splitData[0]) {
+                case "pop":
+                    System.out.println(numStack.size() == 0 ? -1 : numStack.pop());
+                    break;
+                case "top":
+                    System.out.println(numStack.size() == 0 ? -1 : numStack.peek());
+                    break;
+                case "size":
+                    System.out.println(numStack.size());
+                    break;
+                case "empty":
+                    System.out.println(numStack.isEmpty() ? 1 : 0);
+                    break;
+            }
+        }
+    }
+
+    private static void usingClass() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
@@ -32,47 +65,6 @@ public class B10828 {
                     break;
                 case "empty":
                     System.out.println(numStack.isEmpty());
-
-                    break;
-            }
-        }
-    }
-
-    private static void usingStack() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        Stack<Integer> numStack = new Stack<>();
-        for (int i = 0; i < n; i++) {
-            String data = br.readLine();
-            String[] splitData = data.split("\\s");
-            if (splitData.length == 2) {
-                numStack.push(Integer.valueOf(splitData[1]));
-                continue;
-            }
-            switch (splitData[0]) {
-                case "pop":
-                    if (numStack.size() == 0) {
-                        System.out.println(-1);
-                        break;
-                    }
-                    System.out.println(numStack.pop());
-                    break;
-                case "top":
-                    if (numStack.size() == 0) {
-                        System.out.println(-1);
-                        break;
-                    }
-                    System.out.println(numStack.peek());
-                    break;
-                case "size":
-                    System.out.println(numStack.size());
-                    break;
-                case "empty":
-                    if (numStack.isEmpty())
-                        System.out.println(1);
-                    else
-                        System.out.println(0);
                     break;
             }
         }
