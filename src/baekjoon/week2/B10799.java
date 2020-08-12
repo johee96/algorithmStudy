@@ -11,6 +11,28 @@ public class B10799 {
         String value = sb.readLine();
         Stack<Character> stack = new Stack<>();
         int pieceCnt = 0;
+        for (int i = 0; i < value.length(); i++) {
+            if (value.charAt(i) == '(') {
+                stack.push(value.charAt(i));
+            } else {
+                stack.pop();
+                if (value.charAt(i - 1) == '(') {
+                    pieceCnt += stack.size();
+                } else {
+                    pieceCnt++;
+                }
+            }
+        }
+        System.out.println(pieceCnt);
+    }
+}
+
+/*
+
+        BufferedReader sb = new BufferedReader(new InputStreamReader(System.in));
+        String value = sb.readLine();
+        Stack<Character> stack = new Stack<>();
+        int pieceCnt = 0;
         char[] c = value.toCharArray();
 
         for (int i = 0; i < value.length(); i++) {
@@ -26,20 +48,4 @@ public class B10799 {
             }
         }
         System.out.println(pieceCnt);
-    }
-}
-/*
-     char c = value.charAt(i);
-            if (c == '(') {
-                stickCnt++;
-            } else {
-                stickCnt--;
-                char peekStack = stack.peek();
-                if (peekStack == '(') {
-                    pieceCnt += stickCnt;
-                }else{
-                    pieceCnt++;
-                }
-            }
-            stack.push(c);
  */
