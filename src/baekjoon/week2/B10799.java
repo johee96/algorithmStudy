@@ -28,7 +28,6 @@ public class B10799 {
 }
 
 /*
-
         BufferedReader sb = new BufferedReader(new InputStreamReader(System.in));
         String value = sb.readLine();
         Stack<Character> stack = new Stack<>();
