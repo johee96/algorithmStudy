@@ -22,6 +22,9 @@ public class B1781 {
             hwList.add(new Homework(date, ramen));
         }
         Collections.sort(hwList);
+        for (int i = 0; i < hwList.size(); i++)
+            System.out.println(hwList.get(i).date);
+
         long sum = 0;
         for (int i = 0; i < n; i++) {
             int deadLine = hwList.get(i).date;

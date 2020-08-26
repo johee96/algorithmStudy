@@ -19,7 +19,6 @@ public class B2828 {
         for (int i = 0; i < j; i++) {
             int value = Integer.parseInt(br.readLine());
             if (start <= value && end >= value) continue;
-
             if (value > end) {
                 dist += value - end;
                 end = value;
