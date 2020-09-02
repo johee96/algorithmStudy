@@ -20,15 +20,16 @@ public class B1931 {
             meetings.add(new Meeting(start, end));
         }
         Collections.sort(meetings);
-        int time = meetings.get(0).end;
-        int cnt = 1;
-        for (int i = 1; i < n; i++) {
-            if (meetings.get(i).start >= time) {
-                cnt++;
+
+        int time = 0;   //회의가 진행된 시간
+        int result = 0;    //가능한 회의의 수
+        for (int i = 0; i < n; i++) {
+            if (meetings.get(i).start >= time) { // 회의가 진행된 시간과 회의가 시작하는 시간을 비교하여 해당되면 회의 가능!
+                result++;
                 time = meetings.get(i).end;
             }
         }
-        System.out.print(cnt);
+        System.out.print(result);
 
     }
 
@@ -41,6 +42,7 @@ public class B1931 {
             this.end = end;
         }
 
+        //끝나는 시간을 기준으로 오름차순 정렬 -> 같으면 시작 시간을 기준으로 오름차순 정렬
         @Override
         public int compareTo(Meeting o) {
             if (this.end - o.end > 0)

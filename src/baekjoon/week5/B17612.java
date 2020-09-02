@@ -13,7 +13,7 @@ public class B17612 {
         int n = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
         long result = 0;        //결과값
-        int inputCnt = n;       //입력받아야하는 input의 수 (n부터 줄여나감)
+        int inputCnt = n;       //입력받아야하는 input(손님)의 수 (n부터 줄여나감)
         int outputIdx = 1;      //쇼핑몰을 빠져나가는 순서
 
         PriorityQueue<Customer> customerQueue = new PriorityQueue<>();      //고객을 넣는 큐
@@ -36,7 +36,6 @@ public class B17612 {
                 out = customerQueue.poll();
                 result += outputIdx * (long) out.id;
                 counterQueue.add(out.counterNum);
-                System.out.println(outputIdx + " :" + out.id + " ||out.w:" + out.w + " ||result:" + result);
                 outputIdx++;
 
                 if (customerQueue.isEmpty() || customerQueue.peek().w != out.w)     //같은 시간에 끝나는 고객이 없으면 break

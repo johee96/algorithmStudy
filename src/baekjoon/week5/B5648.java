@@ -30,6 +30,7 @@ public class B5648 {
 
     }
 
+    //원소를 거꾸로 뒤집기
     private static Long reverseValue(String value) {
         StringBuilder reStr = new StringBuilder();
         for (int i = value.length() - 1; i >= 0; i--) {

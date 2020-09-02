@@ -6,11 +6,7 @@ import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-/*
-todo 다시풀기
-버블정렬의 특징
-    - 가장 큰 값이 차례대로 맨 뒤로 이동한다.
- */
+//todo 다시풀기
 public class B1838 {
 
     public static void main(String[] args) throws IOException {
@@ -56,3 +52,18 @@ public class B1838 {
 }
 
 
+
+/*
+버블정렬의 특징
+- 가장 큰 값이 차례대로 맨 뒤로 이동한다.
+  즉, 한 바퀴 돌 때 큰 값은 뒤로 쭉~밀린다.
+
+input data   : 30 10 44 27 49
+origin index :  0  1  2  3  4
+---------sort--------
+result data   : 10 27 30 44 49
+origin index  :  1  3  0  2  4
+current index :  0  1  2  3  4
+
+즉, data의 origin index - current index (0보다 큰 값 중)의 최대값
+ */
